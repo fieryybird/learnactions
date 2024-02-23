@@ -1,7 +1,7 @@
 name: fourth-workflow
 on:
   workflow_run:
-    workflows: [third_workflow] # нейм воркфлоу
+    workflows: [third_workflow] # нейм воркфлоу від якого ми залежимо
     types:
       - completed # стан виконання воркфлоу від якого ми залежимо
 
@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Saying hello
-        run: echo "Hello world from the dependent workflow!"
+        run: echo "Hello world from the dependent workflow!!!"
