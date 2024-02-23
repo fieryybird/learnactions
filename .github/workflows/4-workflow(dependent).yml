@@ -1,7 +1,7 @@
 name: fourth-workflow
 on:
   workflow_run:
-    workflows: [third_workflow] # нейм воркфлоу від якого ми залежимо
+    workflows: [third-workflow] # нейм воркфлоу від якого ми залежимо
     types:
       - completed # стан виконання воркфлоу від якого ми залежимо
 
