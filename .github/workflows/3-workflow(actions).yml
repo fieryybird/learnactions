@@ -1,0 +1,12 @@
+name: third-workflow
+on: push
+
+jobs:
+  run-first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Commands in Multiline
+        run: |
+          pwd
+          ls -a
