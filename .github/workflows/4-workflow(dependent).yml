@@ -1,0 +1,14 @@
+name: fourth-workflow
+on:
+  workflow_run:
+    workflows: [third_workflow] # нейм воркфлоу
+    types:
+      - completed # стан виконання воркфлоу від якого ми залежимо
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Saying hello
+        run: echo "Hello world from the dependent workflow!"

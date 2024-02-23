@@ -1,5 +1,7 @@
 name: third-workflow
-on: push
+on:
+  push:
+    branches: main
 
 jobs:
   run-first-job:
