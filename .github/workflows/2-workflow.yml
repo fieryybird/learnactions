@@ -5,16 +5,23 @@ on:
     branches: main
 
 jobs:
-  run-first-job:
+  run-first-ubuntu-job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Display hello text
-        run: echo "Hello from first runner!"
+        run: echo "Hello from first Ubuntu runner!"
+
+  run-first-windows-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Display hello text
+        run: echo "Hello from first Windows runner!"
 
   run-second-job:
     runs-on: ubuntu-latest
-    needs: [run-first-job]
+    needs: [run-first-ubuntu-job, run-first-windows-job]
 
     steps:
       - name: Second Hello
