@@ -4,10 +4,10 @@ on:
   push:
     branches: main
 
-jobs: 
+jobs:
   run-first-job:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Display hello text
         run: echo "Hello-world!"
