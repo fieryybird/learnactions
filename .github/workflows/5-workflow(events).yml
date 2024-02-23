@@ -1,5 +1,11 @@
 name: fifth-workflow
-on: [push, issues, pull_request] # push реагує на пуш до будь якої гілки, де б він не спрацьовував
+on:
+  issues:
+    types: [edited, deleted]
+  pull_request:
+    types: [assigned, closed]
+
+    # push: просто push реагує на пуш до будь якої гілки, де б він не спрацьовував
 
 jobs:
   run-first-commmand:
