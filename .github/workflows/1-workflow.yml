@@ -13,3 +13,7 @@ jobs:
         run: echo "Hello-world!"
       - name: Display goodbye text
         run: echo "Goodbye world!"
+      - name: Check node version
+        run: |
+          node -v
+          npm -v
