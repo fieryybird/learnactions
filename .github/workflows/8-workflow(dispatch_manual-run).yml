@@ -1,0 +1,9 @@
+name: eight-workflow
+on: workflow_dispatch
+
+jobs:
+  first-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show some text.
+        run: echo "Some text"
