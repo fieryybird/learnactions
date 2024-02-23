@@ -10,3 +10,8 @@ jobs:
         run: |
           pwd
           ls -a
+      - name: Geting files from repo
+        uses: actions/checkout@v4
+      - name: Checking files again
+        run: |
+          ls -a
