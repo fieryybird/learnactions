@@ -1,7 +1,7 @@
 name: seventh-workflow
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   first-job:
