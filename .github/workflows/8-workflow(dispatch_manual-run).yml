@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Show input text.
         run: |
-          echo "Title: ${{ inputs.titleCustom }}""
+          echo "Title: ${{ inputs.titleCustom }}"
