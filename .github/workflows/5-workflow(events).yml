@@ -1,0 +1,13 @@
+name: fifth-workflow
+on: [push, issues, pull_request] # push реагує на пуш до будь якої гілки, де б він не спрацьовував
+
+jobs:
+  run-first-commmand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display some text
+        run: |
+          echo ${{ github.sha }}
+          echo ${{ github.ref }}
+
+# echo "This action was triggered by $GITHUB_SHA in branch ${{ GITHUB_REF }}"
