@@ -8,6 +8,4 @@ jobs:
       - name: Display some text
         run: |
           echo ${{ github.sha }}
-          echo ${{ github.ref }}
-
-# echo "This action was triggered by $GITHUB_SHA in branch ${{ GITHUB_REF }}"
+          echo "This action was triggered by ${{ github.sha }} in branch ${{ github.ref}}"
