@@ -6,9 +6,14 @@ on:
       - completed # стан виконання воркфлоу від якого ми залежимо
 
 jobs:
-  hello-job:
+  succes-job:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'succes' }}
     steps:
-      - name: Saying hello
-        run: echo "Hello world from the dependent workflow!!!"
+      - run: echo "Third workflow was succesful"
+
+  failure-job:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'false' }}
+    steps:
+      - run: echo "Third workflow was faild"
