@@ -12,5 +12,6 @@ jobs:
   first-command:
     runs-on: ubuntu-latest
     steps:
-      - name: Show some text.
-        run: echo "Some text"
+      - name: Show input text.
+        run: |
+          echo "Title: ${{ inputs.titleCustom }}""
