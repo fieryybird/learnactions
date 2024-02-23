@@ -4,6 +4,8 @@ on:
     types: [edited, deleted]
   pull_request:
     types: [assigned, closed]
+  push:
+    branches: [main]
 
     # push: просто push реагує на пуш до будь якої гілки, де б він не спрацьовував
 

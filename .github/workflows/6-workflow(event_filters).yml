@@ -1,0 +1,20 @@
+name: sixth-workflow
+on:
+  push:
+    branches: [main, "feature/*"]
+    #    branches-ignore: [page/blog] # !можна використовувати лише коли не юзається branches
+    #    tags:
+    #      - v1.*
+    #      - "!v2.*" # ! дозволяє робити виключення по фільтру
+    paths: #використовує іншу таблицю паттернів
+      - "**.html"
+
+# фільтри використовують LOGICAL AND, тобто всі умови повинні виконуватись
+
+jobs:
+  run-first-command:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Some command
+        run: echo "Some text"
