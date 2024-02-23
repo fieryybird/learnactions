@@ -1,5 +1,12 @@
 name: eight-workflow
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      titleCustom:
+        description: Type the Title
+        type: string
+        required: true
+        default: "Hello World!"
 
 jobs:
   first-command:
