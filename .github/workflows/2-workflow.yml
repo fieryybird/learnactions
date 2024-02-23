@@ -1,0 +1,21 @@
+name: second-workflow
+
+on:
+  push:
+    branches: main
+
+jobs:
+  run-first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display hello text
+        run: echo "Hello from first runner!"
+
+  run-second-job:
+    runs-on: ubuntu-latest
+    needs: [run-first-job]
+
+    steps:
+      - name: Second Hello
+        run: echo "Hello from second runner"
