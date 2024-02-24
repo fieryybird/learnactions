@@ -1,6 +1,6 @@
 name: nineth-workflow
 on: [push]
-run-name: "Dosplay Context information"
+run-name: "Display commiter info from context"
 
 jobs:
   showing-context:
@@ -9,5 +9,4 @@ jobs:
     steps:
       - name: Context and Expressions
         id: context-expressions
-        run: |
-          echo '${{ github.event.commits.committer }}'
+        run: echo '${{ github.event.commits.committer }}'
