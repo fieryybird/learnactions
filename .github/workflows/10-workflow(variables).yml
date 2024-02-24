@@ -1,0 +1,12 @@
+name: ten-workflow
+on: push
+
+jobs:
+  show_variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Event Vars
+        run: |
+          echo: $GITHUB_SHA
+          echo: "${{ github.sha }}"
