@@ -1,5 +1,6 @@
 name: nineth-workflow
 on: [push]
+run-name: "Dosplay Context information"
 
 jobs:
   showing-context:
@@ -9,7 +10,4 @@ jobs:
       - name: Context and Expressions
         id: context-expressions
         run: |
-          echo '${{ toJson(github) }}'
-          echo '${{ toJson(runner) }}'
-          echo '${{ toJson(job) }}'
-          echo '${{ toJson(steps) }}'
+          echo '${{ github.event.commits.committer }}'
