@@ -1,6 +1,5 @@
 name: nineth-workflow
 on: [push]
-run-name: "Display commiter info from context"
 
 jobs:
   showing-context:
@@ -12,4 +11,4 @@ jobs:
       - name: Previous commit
         run: echo "${{ toJson(github.event.after) }}"
       - name: Context commiter
-        run: echo "${{ toJson(github.event.commits.committer) }}"
+        run: echo "${{ toJson(github.event.commits[0].committer) }}"
