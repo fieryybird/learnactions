@@ -12,7 +12,7 @@ jobs:
       - name: Cache Node-modules
         id: cache-step
         uses: actions/cache@v4
-        width:
+        with:
           path: ~/.npm
           key: "cache-file"
 
