@@ -14,6 +14,8 @@ jobs:
         env:
           VAR_3: step-lever-var
         run: |
+          echo $GITHUB_SHA
+          echo "${{ github.sha }}"
           echo $VAR_1
           echo $VAR_2
-          echo $VAR_3
+          echo "${{ env.VAR_3 }}"
