@@ -7,20 +7,12 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - name: First Step
-        run: sleep 30
-      - name: Runs on Canceled
-        if: ${{ cancelled() }}
-        run: echo "Done. Previous step was cancelled"
-      - name: Runs Always
-        if: ${{ always() }}
-        run: echo "This step is always working"
-      - name: Runs after success
-        if: ${{ success() }}
-        run: echo "I'm running when the previous step was succesful"
+      - name: Failure Step
+        id: error-step
+        run: exit 1
       - name: Runs after failure
-        if: ${{ failure() }}
-        run: echo "I'm running when the previous step was succesful"
+        if: ${{ failure() && steps.error-step.conclusion == 'failure' }}
+        run: echo "I'm running becouse first step was failed"
 
   job2:
     runs-on: ubuntu-latest
