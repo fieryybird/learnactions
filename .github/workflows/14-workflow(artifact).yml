@@ -27,5 +27,5 @@ jobs:
           name: math-result # назва артефакту для використання
       - name: Using artifact
         run: |
-          value=`cat math.result.txt`
+          value=`cat math-result.txt`
           echo $value
