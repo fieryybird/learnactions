@@ -1,1 +1,2 @@
-./workflow-storage/
+workflow-storage/*
+node_modules/*

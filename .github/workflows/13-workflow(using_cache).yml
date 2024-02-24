@@ -1,0 +1,23 @@
+name: thirth-workflow
+on: workflow_dispatch
+
+jobs:
+  work-with-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copying file to VM
+        uses: actions/checkout@v4
+
+      - name: Cache Node-modules
+        id: cache-step
+        uses: actions/cache@v4
+        width:
+          path: ~/.npm
+          key: "cache-file"
+
+      - name: Show-files
+        run: echo '${{ steps.cache-step.outputs }}'
+
+      - name: Install node_modules
+        run: npm install
