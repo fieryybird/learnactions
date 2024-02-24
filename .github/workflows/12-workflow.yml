@@ -1,0 +1,23 @@
+name: twelfth-workflow
+on: push
+
+# Status check functions: failure() success() always() canceled()
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step
+        run: sleep 30
+      - name: Runs on Canceled
+        if: ${{ cancelled() }}
+        run: echo "Done. Previous step was cancelled"
+      - name: Runs Always
+        if: ${{ always() }}
+        run: echo "This step is always working"
+      - name: Runs after success
+        if: ${{ success() }}
+        run: echo "I'm running when the previous step was succesful"
+      - name: Runs after failure
+        if: ${{ failure() }}
+        run: echo "I'm running when the previous step was succesful"
