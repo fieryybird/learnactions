@@ -10,4 +10,4 @@ jobs:
       - name: Context event
         run: echo "${{ toJson(github.event) }}"
       - name: Context commiter
-        run: echo "${{ toJson(github.event.commits.committer) }}""
+        run: echo "${{ toJson(github.event.commits.committer) }}"
