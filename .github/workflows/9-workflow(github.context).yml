@@ -9,5 +9,7 @@ jobs:
     steps:
       - name: Context event
         run: echo "${{ toJson(github.event) }}"
+      - name: Previous commit
+        run: echo "${{ toJson(github.event.after) }}"
       - name: Context commiter
         run: echo "${{ toJson(github.event.commits.committer) }}"
