@@ -1,12 +1,16 @@
 name: ten-workflow
 on: push
+env:
+  VAR_1: global-level-var
+  VAR_2: global-level-var
 
 jobs:
   show_variables:
     runs-on: ubuntu-latest
-
+    env:
+      VAR_2: job-level-var
     steps:
       - name: Event Vars
         run: |
-          echo $GITHUB_SHA
-          echo "${{ github.sha }}"
+          echo $VAR_1
+          echo $VAR_2
