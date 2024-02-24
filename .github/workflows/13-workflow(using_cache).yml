@@ -11,12 +11,12 @@ jobs:
 
       - name: Cache Node-modules
         id: cache-step
-        uses: actions/cache@v4
+        uses: actions/cache@v4 # намагається знайти кеш під назвою cache-file і якщо немає, створює його
         with:
           path: ~/.npm
-          key: "cache-file"
+          key: ${{ runner.os }}-cache-node-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Show-files
+      - name: Display cache
         run: echo '${{ toJson(steps.cache-step.outputs) }}'
 
       - name: Install node_modules
