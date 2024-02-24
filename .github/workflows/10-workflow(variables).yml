@@ -3,7 +3,7 @@ on: push
 env:
   VAR_1: global-level-var
   VAR_2: global-level-var
-
+  VAR_3: global-level-var
 jobs:
   show_variables:
     runs-on: ubuntu-latest
@@ -11,6 +11,9 @@ jobs:
       VAR_2: job-level-var
     steps:
       - name: Event Vars
+        env:
+          VAR_3: step-lever-var
         run: |
           echo $VAR_1
           echo $VAR_2
+          echo $VAR_3
