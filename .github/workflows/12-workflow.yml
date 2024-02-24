@@ -21,3 +21,11 @@ jobs:
       - name: Runs after failure
         if: ${{ failure() }}
         run: echo "I'm running when the previous step was succesful"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job
+    if: ${{ failure() }}
+    steps:
+      - name: Allert
+        run: echo "The Previous job was failed"
