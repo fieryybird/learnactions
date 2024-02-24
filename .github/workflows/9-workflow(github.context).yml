@@ -11,4 +11,6 @@ jobs:
       - name: Previous commit
         run: echo "${{ toJson(github.event.after) }}"
       - name: Context commiter
-        run: echo "${{ toJson(github.event.commits[0].committer) }}"
+        run: echo "${{ toJson(github.event.commits[0].committer) }}" # [0] - вказуємо порядковий номер в середині массиву [ ]
+      - name: Head commiter
+        run: echo "${{ toJson(github.event.repository.owner.login) }}"
